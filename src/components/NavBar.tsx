@@ -2,6 +2,10 @@ import { useState, useEffect } from 'react'
 import { Anchor } from './Anchor'
 import { Button } from './Button'
 import { ButtonsContainer, Container, SocialContainer } from './NavBar.styles'
+import logo from '../assets/img/logo-abimael.svg'
+import linkedin from '../assets/img/icon-linkedin.svg'
+import github from '../assets/img/icon-github.svg'
+import { SocialIcon } from './SocialIcon'
 
 export function NavBar() {
   const [activeLink, setActiveLink] = useState('home')
@@ -27,7 +31,7 @@ export function NavBar() {
 
   return (
     <Container scrolled={scrolled}>
-      <h1 style={{ color: 'white' }}>LOGO</h1>
+      <img src={logo} style={{ width: '80px' }} />
       <ButtonsContainer>
         <Anchor
           name="home"
@@ -49,6 +53,8 @@ export function NavBar() {
         />
       </ButtonsContainer>
       <SocialContainer>
+        <SocialIcon img={linkedin} />
+        <SocialIcon img={github} />
         <Button name="Let's Connect" />
       </SocialContainer>
     </Container>
